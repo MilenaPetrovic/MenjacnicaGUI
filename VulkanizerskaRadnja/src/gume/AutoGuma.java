@@ -138,12 +138,30 @@ public class AutoGuma {
 		this.visina = visina;
 	}
 
+	/**
+	 * Vraca sve informacije o gumi.
+	 * 
+	 * @return vrednosti svih atributa gume u jednom Stringu
+	 */
 	@Override
 	public String toString() {
 		return "AutoGuma [markaModel=" + markaModel + ", precnik=" + precnik + ", sirina=" + sirina + ", visina="
 				+ visina + "]";
 	}
 
+	/**
+	 * Uporedjuje gumu unetu kao parametar i vraca vrednost true u slucaju
+	 * poklapanja, false u suprotnom.
+	 * 
+	 * @return 
+	 * <ul> 
+	 * 
+	 *		<li>true - ako je guma identicna</li>
+	 * 
+	 * 		<li>false - ako se guma razlikuje</li>
+	 * 
+	 * </ul>
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
