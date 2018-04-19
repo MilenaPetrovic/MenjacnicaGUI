@@ -41,7 +41,7 @@ public class ObrisiKursGUI extends JFrame {
 	 */
 	public ObrisiKursGUI(MenjacnicaGUI gp) {
 		setResizable(false);
-		setTitle("Obrisi kurs");
+		setTitle("Obri\u0161i kurs");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 400, 349);
 		contentPane = new JPanel();
@@ -88,7 +88,7 @@ public class ObrisiKursGUI extends JFrame {
 
 	private JLabel getLblSifra() {
 		if (lblSifra == null) {
-			lblSifra = new JLabel("Sifra");
+			lblSifra = new JLabel("\u0160ifra");
 			lblSifra.setBounds(12, 25, 70, 15);
 		}
 		return lblSifra;
@@ -128,7 +128,7 @@ public class ObrisiKursGUI extends JFrame {
 
 	private JLabel getLblSkraceniNaziv() {
 		if (lblSkraceniNaziv == null) {
-			lblSkraceniNaziv = new JLabel("Skraceni naziv");
+			lblSkraceniNaziv = new JLabel("Skra\u0107eni naziv");
 			lblSkraceniNaziv.setBounds(12, 148, 140, 15);
 		}
 		return lblSkraceniNaziv;
@@ -203,14 +203,14 @@ public class ObrisiKursGUI extends JFrame {
 
 	private JButton getBtnObrisi() {
 		if (btnObrisi == null) {
-			btnObrisi = new JButton("Obrisi");
+			btnObrisi = new JButton("Obri\u0161i");
 			btnObrisi.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					String kurs = "Sifra: " + textFieldSifra.getText() + ", naziv: " + textFieldNaziv.getText()
 							+ ", skraceni naziv: " + textFieldSkraceni.getText() + ", prodajni kurs: "
 							+ textFieldProdajni.getText() + ", srednji kurs: " + textFieldSrednji.getText()
 							+ ", kupovni kurs: " + textFieldKupovni.getText();
-					gp.ispisiUStatusu(kurs);
+					gp.ispisiUStatus(kurs);
 					dispose();
 				}
 			});
@@ -222,7 +222,7 @@ public class ObrisiKursGUI extends JFrame {
 
 	private JCheckBox getChckbxZaistaObrisiKurs() {
 		if (chckbxZaistaObrisiKurs == null) {
-			chckbxZaistaObrisiKurs = new JCheckBox("Zaista obrisi kurs");
+			chckbxZaistaObrisiKurs = new JCheckBox("Zaista obri\u0161i kurs");
 			chckbxZaistaObrisiKurs.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					if (chckbxZaistaObrisiKurs.isSelected()) {
