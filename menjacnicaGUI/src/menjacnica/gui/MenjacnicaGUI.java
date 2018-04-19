@@ -54,11 +54,12 @@ public class MenjacnicaGUI {
 	private JMenuItem mntmIzvriZamenu;
 	private JPanel panel;
 	private JButton btnDodajKurs;
-	private JButton btnObriiKurs;
+	private JButton btnObrisiKurs;
 	private JButton btnIzvriIzmenu;
 	private JPanel panel_1;
 	private JScrollPane scrollPane_1;
 	private JTextArea textArea;
+	private MenjacnicaGUI gp = this;
 
 	/**
 	 * Launch the application.
@@ -79,7 +80,7 @@ public class MenjacnicaGUI {
 	/**
 	 * Create the application.
 	 */
-	public MenjacnicaGUI() {	
+	public MenjacnicaGUI() {
 
 		frmMenjacnica = new JFrame();
 		frmMenjacnica.addWindowListener(new WindowAdapter() {
@@ -88,8 +89,8 @@ public class MenjacnicaGUI {
 				izlaz();
 			}
 		});
-		frmMenjacnica
-				.setIconImage(Toolkit.getDefaultToolkit().getImage(MenjacnicaGUI.class.getResource("/icons/ajsasdovo.png")));
+		frmMenjacnica.setIconImage(
+				Toolkit.getDefaultToolkit().getImage(MenjacnicaGUI.class.getResource("/icons/ajsasdovo.png")));
 		frmMenjacnica.setTitle("Menjacnica");
 		frmMenjacnica.setBounds(100, 100, 685, 489);
 		frmMenjacnica.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -239,6 +240,12 @@ public class MenjacnicaGUI {
 	private JMenuItem getMntmDodajKurs() {
 		if (mntmDodajKurs == null) {
 			mntmDodajKurs = new JMenuItem("Dodaj kurs");
+			mntmDodajKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					DodajKursGUI dk = new DodajKursGUI(gp);
+					dk.setVisible(true);
+				}
+			});
 		}
 		return mntmDodajKurs;
 	}
@@ -246,6 +253,12 @@ public class MenjacnicaGUI {
 	private JMenuItem getMntmObrisiKurs() {
 		if (mntmObrisiKurs == null) {
 			mntmObrisiKurs = new JMenuItem("Obri\u0161i kurs");
+			mntmObrisiKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					ObrisiKursGUI ok = new ObrisiKursGUI(gp);
+					ok.setVisible(true);
+				}
+			});
 			mntmObrisiKurs.setActionCommand("Obri\u0161i kurs");
 		}
 		return mntmObrisiKurs;
@@ -263,7 +276,7 @@ public class MenjacnicaGUI {
 			panel = new JPanel();
 			panel.setPreferredSize(new Dimension(120, 10));
 			panel.add(getBtnDodajKurs());
-			panel.add(getBtnObriiKurs());
+			panel.add(getBtnObrisiKurs());
 			panel.add(getBtnIzvriIzmenu());
 		}
 		return panel;
@@ -272,17 +285,29 @@ public class MenjacnicaGUI {
 	private JButton getBtnDodajKurs() {
 		if (btnDodajKurs == null) {
 			btnDodajKurs = new JButton("Dodaj kurs");
+			btnDodajKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					DodajKursGUI dodajKurs = new DodajKursGUI(gp);
+					dodajKurs.setVisible(true);
+				}
+			});
 			btnDodajKurs.setPreferredSize(new Dimension(107, 25));
 		}
 		return btnDodajKurs;
 	}
 
-	private JButton getBtnObriiKurs() {
-		if (btnObriiKurs == null) {
-			btnObriiKurs = new JButton("Obri\u0161i kurs");
-			btnObriiKurs.setPreferredSize(new Dimension(107, 25));
+	private JButton getBtnObrisiKurs() {
+		if (btnObrisiKurs == null) {
+			btnObrisiKurs = new JButton("Obri\u0161i kurs");
+			btnObrisiKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					ObrisiKursGUI ok = new ObrisiKursGUI(gp);
+					ok.setVisible(true);
+				}
+			});
+			btnObrisiKurs.setPreferredSize(new Dimension(107, 25));
 		}
-		return btnObriiKurs;
+		return btnObrisiKurs;
 	}
 
 	private JButton getBtnIzvriIzmenu() {
@@ -346,12 +371,13 @@ public class MenjacnicaGUI {
 			textArea.append("\nOtvoren je fajl: " + f);
 		}
 	}
-	
-	private void prikaziAboutProzor(){
-		JOptionPane.showMessageDialog(frmMenjacnica.getContentPane(), "Autor: Milena Petrovic", "O programu Menjacnica 2018",
-				JOptionPane.INFORMATION_MESSAGE);
+
+	private void prikaziAboutProzor() {
+		JOptionPane.showMessageDialog(frmMenjacnica.getContentPane(), "Autor: Milena Petrovic",
+				"O programu Menjacnica 2018", JOptionPane.INFORMATION_MESSAGE);
 	}
-	// void ispisiUStatusu(String s) {
-	// textAreaStatus.append("\n"+s);
-	// }
+
+	void ispisiUStatusu(String s) {
+		textArea.append("\n" + s);
+	}
 }
