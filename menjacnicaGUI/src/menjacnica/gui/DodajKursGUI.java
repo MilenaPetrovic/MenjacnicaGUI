@@ -38,7 +38,6 @@ public class DodajKursGUI extends JFrame {
 	private JButton btnOdustani;
 
 	private MenjacnicaGUI gp;
-
 	/**
 	 * Create the frame.
 	 */
@@ -53,7 +52,7 @@ public class DodajKursGUI extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		contentPane.add(getEastPanel(), BorderLayout.EAST);
 		contentPane.add(getWestPanel(), BorderLayout.WEST);
-		this.gp = gp;
+		this.gp=gp;
 	}
 
 	private JPanel getEastPanel() {
@@ -91,7 +90,7 @@ public class DodajKursGUI extends JFrame {
 
 	private JLabel getLblSifra() {
 		if (lblSifra == null) {
-			lblSifra = new JLabel("\u0160ifra");
+			lblSifra = new JLabel("Sifra");
 			lblSifra.setBounds(10, 23, 114, 15);
 		}
 		return lblSifra;
@@ -151,9 +150,9 @@ public class DodajKursGUI extends JFrame {
 							+ ", skraceni naziv: " + textFieldSkraceni.getText() + ", prodajni kurs: "
 							+ textFieldProdajni.getText() + ", srednji kurs: " + textFieldSrednji.getText()
 							+ ", kupovni kurs: " + textFieldKupovni.getText();
-					gp.ispisiUStatus(kurs);
+					gp.ispisiUStatusu(kurs);
 					dispose();
-				}
+				}				
 			});
 			btnDodaj.setBounds(10, 217, 144, 25);
 		}
@@ -186,7 +185,7 @@ public class DodajKursGUI extends JFrame {
 
 	private JLabel getLblSkraceniNaziv() {
 		if (lblSkraceniNaziv == null) {
-			lblSkraceniNaziv = new JLabel("Skra\u0107eni naziv");
+			lblSkraceniNaziv = new JLabel("Skraceni naziv");
 			lblSkraceniNaziv.setBounds(12, 159, 178, 15);
 		}
 		return lblSkraceniNaziv;

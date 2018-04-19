@@ -55,7 +55,7 @@ public class MenjacnicaGUI {
 	private JPanel panel;
 	private JButton btnDodajKurs;
 	private JButton btnObrisiKurs;
-	private JButton btnIzvrisiZamenu;
+	private JButton btnIzvriIzmenu;
 	private JPanel panel_1;
 	private JScrollPane scrollPane_1;
 	private JTextArea textArea;
@@ -91,7 +91,7 @@ public class MenjacnicaGUI {
 		});
 		frmMenjacnica.setIconImage(
 				Toolkit.getDefaultToolkit().getImage(MenjacnicaGUI.class.getResource("/icons/ajsasdovo.png")));
-		frmMenjacnica.setTitle("Menja\u010Dnica");
+		frmMenjacnica.setTitle("Menjacnica");
 		frmMenjacnica.setBounds(100, 100, 685, 489);
 		frmMenjacnica.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frmMenjacnica.setJMenuBar(getMenuBar());
@@ -267,12 +267,6 @@ public class MenjacnicaGUI {
 	private JMenuItem getMntmIzvriZamenu() {
 		if (mntmIzvriZamenu == null) {
 			mntmIzvriZamenu = new JMenuItem("Izvr\u0161i zamenu");
-			mntmIzvriZamenu.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					IzvrsiZamenuGUI iz = new IzvrsiZamenuGUI(gp);
-					iz.setVisible(true);
-				}
-			});
 		}
 		return mntmIzvriZamenu;
 	}
@@ -283,7 +277,7 @@ public class MenjacnicaGUI {
 			panel.setPreferredSize(new Dimension(120, 10));
 			panel.add(getBtnDodajKurs());
 			panel.add(getBtnObrisiKurs());
-			panel.add(getBtnIzvrisiZamenu());
+			panel.add(getBtnIzvriIzmenu());
 		}
 		return panel;
 	}
@@ -316,17 +310,11 @@ public class MenjacnicaGUI {
 		return btnObrisiKurs;
 	}
 
-	private JButton getBtnIzvrisiZamenu() {
-		if (btnIzvrisiZamenu == null) {
-			btnIzvrisiZamenu = new JButton("Izvr\u0161i izmenu");
-			btnIzvrisiZamenu.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					IzvrsiZamenuGUI iz = new IzvrsiZamenuGUI(gp);
-					iz.setVisible(true);
-				}
-			});
+	private JButton getBtnIzvriIzmenu() {
+		if (btnIzvriIzmenu == null) {
+			btnIzvriIzmenu = new JButton("Izvr\u0161i izmenu");
 		}
-		return btnIzvrisiZamenu;
+		return btnIzvriIzmenu;
 	}
 
 	private JPanel getPanel_1_1() {
@@ -389,7 +377,7 @@ public class MenjacnicaGUI {
 				"O programu Menjacnica 2018", JOptionPane.INFORMATION_MESSAGE);
 	}
 
-	void ispisiUStatus(String s) {
+	void ispisiUStatusu(String s) {
 		textArea.append("\n" + s);
 	}
 }
