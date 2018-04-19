@@ -28,6 +28,7 @@ import javax.swing.event.ChangeEvent;
 public class IzvrsiZamenuGUI extends JFrame {
 
 	private MenjacnicaGUI gp;
+	
 	private JPanel contentPane;
 	private JLabel lblKupovni;
 	private JTextField txtProdajniKurs;
